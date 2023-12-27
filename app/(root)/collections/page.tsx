@@ -1,0 +1,90 @@
+import QuestionCard from "@/components/cards/QuestionCard";
+import Filter from "@/components/shared/Filter";
+import Pagination from "@/components/shared/Pagination";
+import ResultNotFound from "@/components/shared/ResultNotFound";
+import LocalSearch from "@/components/shared/searchbar/LocalSearch";
+import { Button } from "@/components/ui/button";
+import { QuestionFilters } from "@/constants/filters";
+import { getSaveQuestion } from "@/lib/actions/user.action";
+import { SearchParamsProps } from "@/types";
+import { auth } from "@clerk/nextjs";
+import Link from "next/link";
+
+
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Collection | Dev Pedia",
+  description: "Dev Pedia is a community of 1,000,000+ developers.Join us",
+};
+
+export default async function Home({ searchParams }: SearchParamsProps) {
+  const { userId } = auth();
+  if (!userId) return null;
+
+  const result = await getSaveQuestion({
+    clerkId: userId,
+    searchQuery: searchParams.q,
+    filter: searchParams.filter,
+    page: searchParams.page ? +searchParams.page : 1,
+  });
+
+  return (
+    <>
+      <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center ">
+        <h1 className="h1-bold text-dark200_light900">Saved Questions</h1>
+
+        <Link href="/ask-question" className="flex justify-end max-sm:w-full">
+          <Button className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900">
+            Ask Question
+          </Button>
+        </Link>
+      </div>
+
+      <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
+        <LocalSearch
+          route="/"
+          iconPosition="left"
+          imgSrc="/assets/icons/search.svg"
+          placeholder="Search saved question..."
+          otherClasses="flex-1"
+        />
+        <Filter
+          filters={QuestionFilters}
+          otherClasses="min-h-[56px] sm:min-w-[170px]"
+        />
+      </div>
+
+      <div className="mt-10 flex w-full flex-col gap-6">
+        {result.questions.length > 0 ? (
+          result.questions.map((question: any) => (
+            <QuestionCard
+              key={question._id}
+              _id={question._id}
+              title={question.title}
+              tags={question.tags}
+              author={question.author}
+              upvotes={question.upvotes}
+              views={question.views}
+              answers={question.answers}
+              createdAt={question.createdAt}
+            />
+          ))
+        ) : (
+          <ResultNotFound
+            title="There's no saved question(s) to show"
+            description="Be the first to break the silence! 🚀 Ask a Question and kisckstart the discussion. Our querry could be the next big thing others learn from.         Get invloved! 💡"
+            link="/ask-question"
+            linkTitle="Ask a Question"
+          />
+        )}
+      </div>
+
+      <div className="mt-10">
+        <Pagination
+          pageNumber={searchParams?.page ? +searchParams.page : 1}
+          isNext={result.isNext}
+        />
+      </div>
+    </>
+  );
+}
