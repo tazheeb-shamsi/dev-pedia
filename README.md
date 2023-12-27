@@ -32,6 +32,7 @@ Dev Pedia leverages the following technologies and libraries:
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for designing user interfaces.
 - [TinyMCE](https://www.tiny.cloud/) - A rich text editor for modern web applications.
 - [PrismJS](https://prismjs.com/) - A lightweight, extensible syntax highlighter.
+- [shadcn/ui](https://ui.shadcn.com) - Beautifully designed components that you can copy and paste into your apps.
 - [React Hook Form](https://react-hook-form.com/) - A library for managing form state and validation in React applications.
 - [OpenAI](https://beta.openai.com/) - Integration with the OpenAI API for the Answer Generator AI Bot.
 
