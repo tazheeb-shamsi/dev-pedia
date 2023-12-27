@@ -1,14 +1,10 @@
-<h1 >
-  <a href="https://thedevpedia.vercel.app/" style="text-decoration: none; color: inherit;">dev <span style="background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-left:-10px ">Pedia</span></a>
-</h1>
+# [devPedia](https://thedevpedia.vercel.app/)
 
 Dev Pedia is an open-source alternative to Stack Overflow, providing a platform for developers to ask questions, share knowledge, and collaborate. This document serves as a guide for installation, usage, and contribution to the project.
-
 
 ![Dev Pedia](public/assets/devPedia-light.png)
 
 ![Dev Pedia Logo](public/assets/devPedia-dark.png)
-
 
 ## Table of Contents
 
