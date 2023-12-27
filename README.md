@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 >
+  <a href="https://thedevpedia.vercel.app/" style="text-decoration: none; color: inherit;">dev <span style="background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-left:-10px ">Pedia</span></a>
+</h1>
 
-## Getting Started
+Dev Pedia is an open-source alternative to Stack Overflow, providing a platform for developers to ask questions, share knowledge, and collaborate. This document serves as a guide for installation, usage, and contribution to the project.
 
-First, run the development server:
+
+![Dev Pedia](public/assets/devPedia-light.png)
+
+![Dev Pedia Logo](public/assets/devPedia-dark.png)
+
+
+## Table of Contents
+
+- [Tech Stack](#installation)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+
+### Prerequisites
+
+Before you begin, make sure you have the following skill sets:
+
+- [Next.js](https://nextjs.org/)
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
+
+## Tech Stack
+
+Dev Pedia leverages the following technologies and libraries:
+
+- [Next.js](https://nextjs.org/) - A React framework for building web applications.
+- [Clerk](https://docs.clerk.dev/) - Next-generation authentication and user management.
+- [MongoDB](https://www.mongodb.com/) - A NoSQL database for storing and retrieving data.
+- [Mongoose](https://mongoosejs.com/) - An ODM (Object Data Modeling) library for MongoDB and Node.js.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for designing user interfaces.
+- [TinyMCE](https://www.tiny.cloud/) - A rich text editor for modern web applications.
+- [PrismJS](https://prismjs.com/) - A lightweight, extensible syntax highlighter.
+- [React Hook Form](https://react-hook-form.com/) - A library for managing form state and validation in React applications.
+- [OpenAI](https://beta.openai.com/) - Integration with the OpenAI API for the Answer Generator AI Bot.
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/tazheeb-shamsi/dev-pedia.git
+cd dev-pedia
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+###### or
+
+ ```bash
+ yarn
+ ```
+
+### Set Environment Variables
+
+Create a ```.env.local``` file in the root of the project and add the required environment variables, for this please check out ```env.example```:
+
+### Run the Application
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###### or
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ ```bash
+ yarn dev
+ ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Visit <http://localhost:3000> in your browser to access Dev Pedia.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+Dev Pedia stands as an open-source alternative to Stack Overflow, serving as a platform where developers can inquire, exchange knowledge, and collaborate through activities such as posting questions, contributing answers, upvoting or downvoting both questions and answers. Notably, our platform also features a specialized Answer Generator AI Bot that can generate responses to specific questions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##### Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Open-source alternative to Stack Overflow.
+- Platform for developers to ask questions, share knowledge, and collaborate.
+- Activities include asking, answering, upvoting, and downvoting questions and answers.
+- Specialized Answer Generator AI Bot for generating responses to questions.
 
-## Deploy on Vercel
+## Contribution
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions from the community to make Dev Pedia better. If you would like to contribute, follow these steps:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork the repository.
+2. Create a new branch:
+
+- For adding a feature:
+
+```bash
+git checkout -b FEAT/your-branch-name
+```
+
+- For bug fixing:
+
+```bash
+ git checkout -b BUG/your-branch-name
+ ```
+
+3. Make your changes and commit: git commit -m 'Add new feature'.
+4. Push to there respective branch.
+5. Submit a pull request.
+
+Please make sure to follow our code of conduct and contribution guidelines.
+
+##### License
+
+This project is licensed under the MIT License.
+
+Remember to replace placeholders of ```.env.local``` like
+`YOUR_CLERK_PUBLISHABLE_KEY`, `YOUR_MONGODB_URL`, etc., with the actual values for your project. Additionally, consider adding more details and sections based on your project's specific requirements.
