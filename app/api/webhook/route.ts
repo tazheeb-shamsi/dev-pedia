@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     const { id, email_addresses, image_url, username, first_name, last_name } =
       evt.data;
 
-    // create a new user in our database
+    // create a new user in our mongo database
     const createdUser = await createUser({
       clerkId: id,
       name: `${first_name} ${last_name ? ` ${last_name} ` : ""}`,
@@ -72,7 +72,7 @@ export async function POST(req: Request) {
     const { id, email_addresses, image_url, username, first_name, last_name } =
       evt.data;
 
-    // create a new user in our database
+    // update a user in our mongo database
     const updatedUser = await updateUser({
       clerkId: id,
       updateData: {
@@ -87,6 +87,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "success", user: updatedUser });
   }
 
+  // delete a user in our database
   if (eventType === "user.deleted") {
     const { id } = evt.data;
     const deletedUser = await deleteUser({
@@ -94,5 +95,5 @@ export async function POST(req: Request) {
     });
     return NextResponse.json({ message: "success", user: deletedUser });
   }
-  return new Response("", { status: 201 });
+  return NextResponse.json({ message: "success", status: 201 });
 }

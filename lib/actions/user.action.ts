@@ -51,43 +51,6 @@ export const updateUser = async (params: UpdateUserParams) => {
   }
 };
 
-// export const deleteUser = async (params: DeleteUserParams) => {
-//   try {
-//     connectToDatabase();
-//     const { clerkId } = params;
-
-//     const user = await User.findOneAndDelete({ clerkId });
-
-//     if (!user) {
-//       throw new Error("User not found");
-//     }
-//     // Delete the user from the database
-//     // and the user's questions, answers, comments, etc.
-
-//     // get user's questions and answers
-
-//     const userQuestionIds = await Question.find({
-//       author: user.value._id,
-//     }).distinct("_id");
-
-//     const userAnswerIds = await Answer.find({
-//       author: user.value._id,
-//     }).distinct("_id");
-
-//     await Question.deleteMany(userQuestionIds);
-
-//     await Answer.deleteMany(userAnswerIds);
-
-//     // TODO: Delete the user's answers, upvotes and downVotes
-
-//     const deletedUser = await User.findByIdAndDelete(user.value._id);
-//     return deletedUser;
-//   } catch (error) {
-//     console.log(error);
-//     throw error;
-//   }
-// };
-
 export const deleteUser = async (params: DeleteUserParams) => {
   try {
     connectToDatabase();
