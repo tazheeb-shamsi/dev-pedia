@@ -96,17 +96,17 @@ We welcome contributions from the community to make Dev Pedia better. If you wou
 1. Fork the repository.
 2. Create a new branch:
 
-- For adding a feature:
+   - For adding a feature:
 
-```bash
-git checkout -b FEAT/your-branch-name
-```
+    ```bash
+    git checkout -b FEAT/your-branch-name
+    ```
 
-- For bug fixing:
+   - For bug fixing:
 
-```bash
- git checkout -b BUG/your-branch-name
- ```
+    ```bash
+     git checkout -b BUG/your-branch-name
+     ```
 
 3. Make your changes and commit: git commit -m 'Add new feature'.
 4. Push to there respective branch.
