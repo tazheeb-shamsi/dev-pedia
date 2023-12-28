@@ -108,7 +108,7 @@ We welcome contributions from the community to make Dev Pedia better. If you wou
      git checkout -b BUG/your-branch-name
      ```
 
-3. Make your changes and commit: git commit -m 'Add new feature'.
+3. Make your changes and commit your changes.
 4. Push to there respective branch.
 5. Submit a pull request.
 
