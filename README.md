@@ -8,7 +8,7 @@ Dev Pedia is an open-source alternative to Stack Overflow, providing a platform 
 
 ## Table of Contents
 
-- [Tech Stack](#installation)
+- [TechStack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contribution](#contribution)
