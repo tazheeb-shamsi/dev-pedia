@@ -1,10 +1,12 @@
 # [devPedia](https://thedevpedia.vercel.app/)
 
-Dev Pedia is an open-source alternative to Stack Overflow, providing a platform for developers to ask questions, share knowledge, and collaborate. This document serves as a guide for installation, usage, and contribution to the project.
+Dev Pedia stands as a community-driven alternative to Stack Overflow, fostering an environment where developers can seek guidance, share insights, and collaborate effectively. Beyond its core Q&A functionality, Dev Pedia is designed as an interactive platform. Developers earn reputation points through various interactions such as upvoting, downvoting, posting questions, and providing answers. The accumulation of these points leads to the awarding of badges, categorized into Bronze, Silver, and Gold, reflecting users' contributions and expertise within the community.
+
 
 ![Dev Pedia](public/assets/devPedia-light.png)
 
 ![Dev Pedia Logo](public/assets/devPedia-dark.png)
+
 
 ## Table of Contents
 
@@ -32,6 +34,7 @@ Dev Pedia leverages the following technologies and libraries:
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for designing user interfaces.
 - [TinyMCE](https://www.tiny.cloud/) - A rich text editor for modern web applications.
 - [PrismJS](https://prismjs.com/) - A lightweight, extensible syntax highlighter.
+- [Typescript](https://www.typescriptlang.org) - A superset of JavaScript that adds static types to the language.
 - [shadcn/ui](https://ui.shadcn.com) - Beautifully designed components that you can copy and paste into your apps.
 - [React Hook Form](https://react-hook-form.com/) - A library for managing form state and validation in React applications.
 - [OpenAI](https://beta.openai.com/) - Integration with the OpenAI API for the Answer Generator AI Bot.
