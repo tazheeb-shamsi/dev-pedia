@@ -21,7 +21,7 @@ const UserCard = async ({ user }: Props) => {
   return (
     <Link
       href={`/profile/${user.clerkId}`}
-      className="w-full shadow-light-300 dark:shadow-dark-200 max-xs:min-w-full xs:w-[260px]"
+      className="w-full shadow-light-300 max-xs:min-w-full xs:w-[260px] dark:shadow-dark-200"
     >
       <article className=" light-border background-light800_dark300 text-dark500_light700 flex w-full flex-col items-center justify-center rounded-[10px] border p-8">
         <Image

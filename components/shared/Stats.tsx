@@ -2,6 +2,7 @@ import { formatBigNumber } from "@/lib/utils";
 import { BadgeCounts } from "@/types";
 import Image from "next/image";
 import React from "react";
+import { Badge } from "../ui/badge";
 
 interface StatsProps {
   totalQuestions: number;
@@ -41,9 +42,18 @@ const Stats = ({
 }: StatsProps) => {
   return (
     <div className="mt-10">
-      <h4 className="h3-semibold text-dark200_light900">
-        Stats - {reputation || 0}
-      </h4>
+      <div className="flex items-center justify-between">
+        <h4 className="h3-semibold text-dark200_light900">Stats</h4>
+        <div className="flex items-center gap-2">
+          <h4 className="h3-semibold text-dark200_light900">Reputation</h4>
+          <Badge
+            variant="outline"
+            className="background-light800_dark300 text-light400_light500 rounded-lg border-none px-3 py-2 text-lg font-semibold"
+          >
+            {reputation || 0}
+          </Badge>
+        </div>
+      </div>
 
       <div className="mt-5 grid grid-cols-1 gap-5 xs:grid-cols-2 md:grid-cols-4">
         <div
