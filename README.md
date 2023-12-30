@@ -114,9 +114,9 @@ We welcome contributions from the community to make Dev Pedia better. If you wou
 
 Please make sure to follow our code of conduct and contribution guidelines.
 
-##### License
+## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/tazheeb-shamsi/dev-pedia/license).
 
 Remember to replace placeholders of ```.env.local``` like
 `YOUR_CLERK_PUBLISHABLE_KEY`, `YOUR_MONGODB_URL`, etc., with the actual values for your project. Additionally, consider adding more details and sections based on your project's specific requirements.
