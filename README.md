@@ -8,6 +8,8 @@ Dev Pedia stands as a community-driven alternative to Stack Overflow, fostering 
 ![Dev Pedia Logo](public/assets/devPedia-dark.png)
 
 
+
+
 ## Table of Contents
 
 - [TechStack](#tech-stack)
@@ -50,33 +52,57 @@ cd dev-pedia
 
 ### Install Dependencies
 
+#### If using npm
 ```bash
 npm install
 ```
 
-###### or
+#### If using Yarn
+```bash
+yarn
+```
 
- ```bash
- yarn
- ```
 
-### Set Environment Variables
 
-Create a ```.env.local``` file in the root of the project and add the required environment variables, for this please check out ```env.example```:
 
 ### Run the Application
 
+#### If using npm
 ```bash
 npm run dev
 ```
 
-###### or
+#### If using yarn
 
  ```bash
  yarn dev
  ```
 
-Visit <http://localhost:3000> in your browser to access Dev Pedia.
+Visit <http://localhost:3000> in your browser to access devPedia.
+
+
+### Set Environment Variables
+
+Create a ```.env.local``` file in the root of the project and your API keys for necessary services:
+
+```env
+
+CLERK_SECRET_KEY=YOUR_CLERK_SECRET_KEY
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=YOUR_CLERK_PUBLISHABLE_KEY
+NEXT_CLERK_WEBHOOK_SECRET=YOUR_NEXT_CLERK_WEBHOOK_SECRET
+
+NEXT_PUBLIC_TINY_EDITOR_API_KEY=YOUR_NEXT_PUBLIC_TINY_EDITOR_API_KEY
+
+MONGODB_URL=YOUR_MONGODB_URL
+
+NEXT_PUBLIC_SERVER_URL=http://localhost:3000
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+```
 
 ## Usage
 
@@ -116,7 +142,7 @@ Please make sure to follow our code of conduct and contribution guidelines.
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/tazheeb-shamsi/dev-pedia/license).
+This project is licensed under the [MIT License](https://tazheeb.com).
 
 Remember to replace placeholders of ```.env.local``` like
 `YOUR_CLERK_PUBLISHABLE_KEY`, `YOUR_MONGODB_URL`, etc., with the actual values for your project. Additionally, consider adding more details and sections based on your project's specific requirements.
