@@ -1,14 +1,12 @@
-# [devPedia](https://thedevpedia.vercel.app/)
+<!-- # [devPedia](https://thedevpedia.vercel.app/) -->
 
-Dev Pedia stands as a community-driven alternative to Stack Overflow, fostering an environment where developers can seek guidance, share insights, and collaborate effectively. Beyond its core Q&A functionality, Dev Pedia is designed as an interactive platform. Developers earn reputation points through various interactions such as upvoting, downvoting, posting questions, and providing answers. The accumulation of these points leads to the awarding of badges, categorized into Bronze, Silver, and Gold, reflecting users' contributions and expertise within the community.
+![devPedia](/public/assets/icons/devpedia-logo.png)
 
+[devPedia](https://thedevpedia.vercel.app/) stands as a community-driven alternative to Stack Overflow, fostering an environment where developers can seek guidance, share insights, and collaborate effectively. Beyond its core Q&A functionality, Dev Pedia is designed as an interactive platform. Developers earn reputation points through various interactions such as upvoting, downvoting, posting questions, and providing answers. The accumulation of these points leads to the awarding of badges, categorized into Bronze, Silver, and Gold, reflecting users' contributions and expertise within the community.
 
 ![Dev Pedia](public/assets/devPedia-light.png)
 
 ![Dev Pedia Logo](public/assets/devPedia-dark.png)
-
-
-
 
 ## Table of Contents
 
@@ -53,21 +51,21 @@ cd dev-pedia
 ### Install Dependencies
 
 #### If using npm
+
 ```bash
 npm install
 ```
 
 #### If using Yarn
+
 ```bash
 yarn
 ```
 
-
-
-
 ### Run the Application
 
 #### If using npm
+
 ```bash
 npm run dev
 ```
@@ -79,7 +77,6 @@ npm run dev
  ```
 
 Visit <http://localhost:3000> in your browser to access devPedia.
-
 
 ### Set Environment Variables
 
