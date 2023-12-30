@@ -108,6 +108,7 @@ const Page = async ({ params, searchParams }: any) => {
       />
       <AnswerForm
         question={result.content}
+        userId={user?._id}
         questionId={JSON.stringify(result._id)}
         authorId={JSON.stringify(user?._id)}
       />

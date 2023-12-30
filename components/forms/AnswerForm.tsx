@@ -19,13 +19,20 @@ import Image from "next/image";
 import { createAnswer } from "@/lib/actions/answer.action";
 import { usePathname } from "next/navigation";
 
+import { toast } from "../ui/use-toast";
+
 interface AnswerProps {
   question: string;
   questionId: string;
   authorId: string;
+  userId: string;
 }
-
-const AnswerForm = ({ question, questionId, authorId }: AnswerProps) => {
+const AnswerForm = ({
+  question,
+  questionId,
+  authorId,
+  userId,
+}: AnswerProps) => {
   const pathname = usePathname();
   const { mode } = useTheme();
   const editorRef = useRef(null);
@@ -42,6 +49,12 @@ const AnswerForm = ({ question, questionId, authorId }: AnswerProps) => {
   const handleCreateAnswer = async (
     values: z.infer<typeof AnswerFormSchema>
   ) => {
+    if (!userId) {
+      return toast({
+        title: "Please Log-in",
+        description: " You must be loggedin to perform this action",
+      });
+    }
     setIsSubmitting(true);
 
     try {
@@ -58,14 +71,21 @@ const AnswerForm = ({ question, questionId, authorId }: AnswerProps) => {
         const editor = editorRef.current as any;
         editor.setContent("");
       }
+      toast({
+        title: "Answered Successfully",
+        variant: "default",
+      });
     } catch (error) {
-      console.log("Error submitting Answer", error);
+      toast({
+        title: "Error occured whuile submitting Answer",
+        variant: "default",
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const generaetAnserWithAi = async () => {
+  const generateAnswerWithAi = async () => {
     if (!authorId) return;
     setIsAIsubmitting(true);
 
@@ -102,7 +122,7 @@ const AnswerForm = ({ question, questionId, authorId }: AnswerProps) => {
         </h4>
         <Button
           className="btn light-border-2 cursor-not-allowed gap-1.5 rounded-md px-4 py-3 text-primary-500 shadow-none dark:text-primary-500"
-          onClick={generaetAnserWithAi}
+          onClick={generateAnswerWithAi}
           disabled={true}
         >
           {isAIsubmitting ? (

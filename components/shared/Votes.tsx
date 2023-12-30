@@ -88,13 +88,20 @@ const Votes = ({
         });
       }
       return toast({
-        title: `Upvote ${!hasupVoted ? "Successful" : "Removed"}`,
-        variant: !hasupVoted ? "default" : "destructive",
+        title: `Downvote ${!hasdownVoted ? "Successful" : "Removed"}`,
+        variant: !hasdownVoted ? "default" : "destructive",
       });
     }
   };
 
   const handleSave = async () => {
+    if (!userId) {
+      return toast({
+        title: "Please Log-in",
+        description: " You must be loggedin to perform this action",
+      });
+    }
+
     await toggleSaveQuestion({
       userId: JSON.parse(userId),
       questionId: JSON.parse(itemId),
