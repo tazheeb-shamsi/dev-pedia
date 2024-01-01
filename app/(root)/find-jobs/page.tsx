@@ -21,7 +21,7 @@ const page = () => {
         </div>
         <Image
           src="/assets/wip.gif"
-          alt="Under Construction"
+          alt="Under Development"
           width={400}
           height={300}
           className="mt-8 items-center rounded-full"
