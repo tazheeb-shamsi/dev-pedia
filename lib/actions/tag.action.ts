@@ -8,7 +8,7 @@ import {
   GetTopInteractedTagsParams,
 } from "./shared.types";
 import Tag, { ITag } from "@/database/tag.model";
-import { FilterQuery } from "mongoose";
+import { FilterQuery, Schema } from "mongoose";
 import Question from "@/database/question.model";
 
 export async function getAllTags(params: GetAllTagsParams) {
@@ -56,26 +56,71 @@ export async function getAllTags(params: GetAllTagsParams) {
   }
 }
 
+// export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
+//   try {
+//     connectToDatabase();
+
+//     const { userId } = params;
+//     const user = await User.findById(userId);
+
+//     if (!user) {
+//       throw new Error(`User ${userId} not found`);
+//     }
+
+//     // Find interaction of User and group by Tags
+//     // Interactioins...
+//     return [
+//       { _id: "1", name: "tag1" },
+//       { _id: "2", name: "tag2" },
+//       { _id: "3", name: "tag3" },
+//     ];
+//   } catch (error) {
+//     console.log(error);
+//     throw error;
+//   }
+// }
+
 export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
   try {
     connectToDatabase();
 
     const { userId } = params;
-    const user = await User.findById(userId);
 
-    if (!user) {
-      throw new Error(`User ${userId} not found`);
-    }
+    // Find interactions of the user
+    const userQuestions = await Question.find({
+      author: userId,
+    }).populate("tags");
 
-    // Find interaction of User and group by Tags
-    // Interactioins...
-    return [
-      { _id: "1", name: "tag1" },
-      { _id: "2", name: "tag2" },
-      { _id: "3", name: "tag3" },
-    ];
+    // Extract tag ids from interactions and flatten the array
+    const tagIds: Schema.Types.ObjectId[] = userQuestions.flatMap((question) =>
+      question.tags.map((tag: any) => tag._id)
+    );
+
+    // Count the occurrences of each tag id globally for the user
+    const tagCountMap: Record<string, number> = tagIds.reduce(
+      (countMap, id) => {
+        if (id) {
+          const stringId = id.toString();
+          // @ts-ignore
+          countMap[stringId] = (countMap[stringId] || 0) + 1;
+        }
+        return countMap;
+      },
+      {}
+    );
+    // Sort the tag ids by count in descending order
+    const sortedTagIds = Object.keys(tagCountMap).sort(
+      (a, b) => tagCountMap[b] - tagCountMap[a]
+    );
+    // Slice to get the top 2 tag ids
+    const topTagIds = sortedTagIds.slice(0, 2);
+
+    // Query the Tag model to get tag details
+    const topTags = await Tag.find({ _id: { $in: topTagIds } });
+
+    return topTags;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }

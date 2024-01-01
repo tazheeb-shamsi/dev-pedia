@@ -23,7 +23,7 @@ const UserCard = async ({ user }: Props) => {
       href={`/profile/${user.clerkId}`}
       className="w-full shadow-light-300 max-xs:min-w-full xs:w-[260px] dark:shadow-dark-200"
     >
-      <article className=" light-border background-light800_dark300 text-dark500_light700 flex w-full flex-col items-center justify-center rounded-[10px] border p-8">
+      <article className=" light-border background-light800_dark300 text-dark500_light700 flex h-[17rem] w-full flex-col items-center justify-center rounded-[10px] border p-8">
         <Image
           src={user.picture}
           alt="user profile picture"
@@ -49,7 +49,7 @@ const UserCard = async ({ user }: Props) => {
               ))}
             </div>
           ) : (
-            <Badge> Not tags yet</Badge>
+            <Badge></Badge>
           )}
         </div>
       </article>
