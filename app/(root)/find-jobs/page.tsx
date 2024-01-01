@@ -16,7 +16,7 @@ const page = () => {
             Work in Progress
           </h1>
           <p className="mt-4 text-gray-600">
-            This page is under construction. Check back soon!
+            This page is under development. Check back soon!
           </p>
         </div>
         <Image
