@@ -30,7 +30,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
             alt="profile-pic"
             width={140}
             height={140}
-            className="rounded-full object-cover"
+            className="h-[140px] w-[140px] rounded-full object-cover"
           />
 
           <div className="mt-3">
@@ -41,7 +41,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
               @{userInfo.user.username}
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center justify-start gap-5">
+            <div className="mt-3 flex flex-wrap items-center justify-start gap-5">
               {userInfo.user.portfolioWebsite && (
                 <ProfileLink
                   imgUrl="/assets/icons/link.svg"
@@ -62,7 +62,7 @@ const Page = async ({ params, searchParams }: URLProps) => {
             </div>
 
             {userInfo.user.bio && (
-              <p className="paragraph-regular text-dark400_light800 mt-8">
+              <p className="paragraph-regular text-dark400_light800 mt-1">
                 {userInfo.user.bio}
               </p>
             )}

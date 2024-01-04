@@ -52,7 +52,7 @@ const AllAnswers = async ({
                   width={20}
                   height={20}
                   alt="profile-pic"
-                  className="rounded-full
+                  className="h-[20px] w-[20px] rounded-full
                     object-cover max-sm:mt-0.5"
                 />
 
