@@ -100,8 +100,8 @@ const GlobalResult = () => {
               ))
             ) : (
               <div className="flex flex-col px-5">
-                <p className="text-dark200_light800 body-regular px-5 py-2.5">
-                  Oops, no results found!
+                <p className="text-dark200_light800 body-regular px-5 py-2.5 text-center">
+                  Oops! no results found.
                 </p>
               </div>
             )}

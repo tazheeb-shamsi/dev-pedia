@@ -7,7 +7,7 @@ import Answer from "@/database/answer.model";
 import User from "@/database/user.model";
 import Tag from "@/database/tag.model";
 
-const SearchableTypes = ["question", "answer", "user", "type"];
+const SearchableTypes = ["question", "answer", "user", "tag"];
 
 export async function globalSearch(params: SearchParams) {
   try {
