@@ -10,7 +10,7 @@ interface ThemeContextTypes {
 const ThemeContext = createContext<ThemeContextTypes | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("system");
 
   const handleThemeChange = () => {
     if (
