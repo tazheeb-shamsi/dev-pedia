@@ -8,7 +8,6 @@ import { SearchParamsProps } from "@/types";
 import Link from "next/link";
 import React from "react";
 
-
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Community | Dev Pedia",
@@ -21,7 +20,6 @@ const Page = async ({ searchParams }: SearchParamsProps) => {
     filter: searchParams.filter,
     page: searchParams.page ? +searchParams.page : 1,
   });
-
   return (
     <>
       <h1 className="h1-bold text-dark200_light900">All Users</h1>
